@@ -1,0 +1,22 @@
+{
+  "_meta": {
+    "name": "Sefid Yab Database",
+    "version": "1.0.0",
+    "created": "2025-12-02",
+    "updated": "2025-12-02",
+    "author": {
+      "name": "Tawana Mohammadi",
+      "website": "https://tawana.online",
+      "email": "info@tawana.online",
+      "orcid": "0009-0005-6825-6728"
+    },
+    "doi": "10.6084/m9. figshare.30758297",
+    "license": "GPL-3.0"
+  },
+  "statistics": {
+    "total_users": 0,
+    "total_scans": 0,
+    "anomalies_detected": 0
+  },
+  "users": []
+}
