@@ -68,9 +68,10 @@ export class GitHubSync {
                 }
             };
 
-            // Note: This would require actual GitHub API call
-            // For now, mock implementation
-            console.log('Gist created successfully');
+            // TODO: Implement actual GitHub API call
+            // WARNING: This is a mock implementation that always returns true
+            // Replace with proper GitHub API integration before production use
+            console.log('Gist created successfully (mock)');
             return true;
         } catch (error) {
             console.error('Create gist error:', error);
@@ -86,10 +87,9 @@ export class GitHubSync {
      */
     async load(gistId, token) {
         try {
-            // This would fetch from GitHub API
-            console.log('Loading data from GitHub...');
-            
-            // Mock implementation
+            // TODO: Implement actual GitHub API fetch
+            // WARNING: This is a mock implementation
+            console.log('Loading data from GitHub (mock)...');
             return null;
         } catch (error) {
             console.error('GitHub load error:', error);

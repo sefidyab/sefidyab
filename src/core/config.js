@@ -53,6 +53,11 @@ export const CONFIG = {
         anomaly_score: 0.7,
         suspicious_patterns: 3,
         min_account_age: 30 // days
+    },
+    
+    // Detection keywords
+    KEYWORDS: {
+        iran_locations: ['iran', 'tehran', 'تهران', 'ایران']
     }
 };
 

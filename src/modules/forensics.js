@@ -96,8 +96,7 @@ export class Forensics {
         }
 
         // Check for Iranian locations
-        const iranKeywords = ['iran', 'tehran', 'تهران', 'ایران'];
-        const isIran = iranKeywords.some(keyword => 
+        const isIran = CONFIG.KEYWORDS.iran_locations.some(keyword => 
             location.toLowerCase().includes(keyword)
         );
 

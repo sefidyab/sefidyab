@@ -74,8 +74,9 @@ export class Auth {
      */
     async login(username, password) {
         try {
-            // This would connect to authentication service
-            // For now, simple mock implementation
+            // TODO: Replace with actual authentication service
+            // WARNING: This is a mock implementation and bypasses security checks
+            // Do NOT use in production without implementing proper authentication
             this.user = { username };
             this.authenticated = true;
             return true;
@@ -110,8 +111,9 @@ export class Auth {
         }
 
         try {
-            // This would verify token with service
-            // For now, simple check
+            // TODO: Replace with actual token verification
+            // WARNING: This is a mock implementation
+            // Implement proper token verification before production use
             this.authenticated = true;
             return true;
         } catch (error) {

@@ -19,6 +19,16 @@ export class Card {
     }
 
     /**
+     * Sanitize username to prevent XSS
+     * @param {string} username - Raw username
+     * @returns {string} Sanitized username
+     */
+    sanitizeUsername(username) {
+        // Only allow alphanumeric and underscore characters
+        return String(username).replace(/[^a-zA-Z0-9_]/g, '');
+    }
+
+    /**
      * Create a user card
      * @param {Object} userData - User data
      * @returns {HTMLElement} Card element
@@ -35,6 +45,15 @@ export class Card {
 
         card.innerHTML = this.getCardHTML(userData);
 
+        // Attach event listener for link button
+        const linkBtn = card.querySelector('.card-btn');
+        if (linkBtn) {
+            linkBtn.addEventListener('click', () => {
+                const username = this.sanitizeUsername(linkBtn.dataset.username);
+                window.open(`https://x.com/${username}`, '_blank');
+            });
+        }
+
         this.cards.set(userData.username, card);
 
         return card;
@@ -49,20 +68,21 @@ export class Card {
         const status = userData.detection?.status || 'hidden';
         const statusText = detector.getStatusDescription(status, 'fa');
         const score = userData.detection?.anomaly_score || 0;
+        const safeUsername = this.sanitizeUsername(userData.username);
 
         return `
             <div class="card-header">
                 <div class="card-avatar">
-                    <img src="https://unavatar.io/twitter/${userData.username}" 
-                         alt="${userData.username}"
-                         onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2248%22 height=%2248%22%3E%3Crect fill=%22%23${this.getColorForUsername(userData.username)}%22 width=%2248%22 height=%2248%22/%3E%3C/svg%3E'">
+                    <img src="https://unavatar.io/twitter/${safeUsername}" 
+                         alt="${safeUsername}"
+                         onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2248%22 height=%2248%22%3E%3Crect fill=%22%23${this.getColorForUsername(safeUsername)}%22 width=%2248%22 height=%2248%22/%3E%3C/svg%3E'">
                 </div>
                 <div class="card-info">
-                    <div class="card-username">@${userData.username}</div>
+                    <div class="card-username">@${safeUsername}</div>
                     <div class="card-status">${statusText}</div>
                 </div>
                 <div class="card-actions">
-                    <button class="card-btn" onclick="window.open('https://x.com/${userData.username}', '_blank')">
+                    <button class="card-btn" data-username="${safeUsername}">
                         🔗
                     </button>
                 </div>
@@ -230,14 +250,15 @@ export class Card {
     createCompact(userData) {
         const card = document.createElement('div');
         card.className = 'sefidyab-card-compact';
-        card.dataset.username = userData.username;
+        const safeUsername = this.sanitizeUsername(userData.username);
+        card.dataset.username = safeUsername;
 
         const status = userData.detection?.status || 'hidden';
         card.classList.add(`status-${status}`);
 
         card.innerHTML = `
             <span class="compact-icon">${this.getStatusIcon(status)}</span>
-            <span class="compact-username">@${userData.username}</span>
+            <span class="compact-username">@${safeUsername}</span>
             <span class="compact-score">${((userData.detection?.anomaly_score || 0) * 100).toFixed(0)}%</span>
         `;
 

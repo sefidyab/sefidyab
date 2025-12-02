@@ -9,6 +9,9 @@
 
 import { CONFIG } from '../core/config.js';
 
+// Paths to exclude from username extraction
+const EXCLUDED_PATHS = ['home', 'explore', 'notifications', 'messages', 'compose'];
+
 /**
  * Timeline scanner for extracting usernames from X/Twitter
  */
@@ -90,7 +93,7 @@ export class Scanner {
                 if (match && match[1]) {
                     const username = match[1];
                     // Filter out common pages
-                    if (!['home', 'explore', 'notifications', 'messages', 'compose'].includes(username)) {
+                    if (!EXCLUDED_PATHS.includes(username)) {
                         usernames.push(username);
                     }
                 }
