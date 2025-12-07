@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://sefidyab.github.io/sitemap.xml
