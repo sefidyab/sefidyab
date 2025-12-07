@@ -1,0 +1,62 @@
+[
+    {
+        "handle": "Clintlicher95",
+        "based_in": "United States",
+        "vpn_warning": true,
+        "connected_via": "United States App Store",
+        "joined": "October 2009",
+        "rename_count": 0,
+        "followers": 3862,
+        "following": 395,
+        "posts": 169300,
+        "detected_at": "2024-12-07T09:30:00Z"
+    },
+    {
+        "handle": "Mahdi_CyberX",
+        "based_in": "West Asia",
+        "vpn_warning": true,
+        "connected_via": "Android",
+        "joined": "March 2022",
+        "rename_count": 3,
+        "followers": 1205,
+        "following": 1400,
+        "posts": 540,
+        "detected_at": "2024-12-07T10:15:00Z"
+    },
+    {
+        "handle": "Sarbaz_Gomnam_001",
+        "based_in": "Iran",
+        "vpn_warning": false,
+        "connected_via": "Twitter for Android",
+        "joined": "January 2023",
+        "rename_count": 1,
+        "followers": 50,
+        "following": 20,
+        "posts": 12,
+        "detected_at": "2024-12-07T11:00:00Z"
+    },
+    {
+        "handle": "News_Proxy_IR",
+        "based_in": "Tehran",
+        "vpn_warning": true,
+        "connected_via": "Web App",
+        "joined": "December 2019",
+        "rename_count": 0,
+        "followers": 15600,
+        "following": 200,
+        "posts": 8500,
+        "detected_at": "2024-12-07T11:45:00Z"
+    },
+    {
+        "handle": "US_Patriot_Fake",
+        "based_in": "Unknown",
+        "vpn_warning": true,
+        "connected_via": null,
+        "joined": "May 2024",
+        "rename_count": 5,
+        "followers": 10,
+        "following": 500,
+        "posts": 2,
+        "detected_at": "2024-12-07T12:30:00Z"
+    }
+]

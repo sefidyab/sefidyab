@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>سفید یاب | Sefid Yab - شفافیت در فضای مجازی</title>
+    <meta name="description" content="ابزار هوشمند شناسایی سیم‌کارت سفید و حساب‌های مشکوک در شبکه اجتماعی X (توییتر).  شفافیت در فضای مجازی.">
+    <meta name="keywords" content="سفید یاب, سیم کارت سفید, توییتر, ایکس, شناسایی بات, امنیت سایبری, Sefid Yab, White SIM, Twitter, X, Bot Detection">
+    <meta name="author" content="Tawana Mohammadi">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://tawanamohammadi.github.io/sefidyab/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tawanamohammadi.github.io/sefidyab/">
+    <meta property="og:title" content="سفید یاب | Sefid Yab">
+    <meta property="og:description" content="ابزار هوشمند شناسایی سیم‌کارت سفید در X.  شفافیت در فضای مجازی.">
+    <meta property="og:image" content="https://tawanamohammadi.github.io/sefidyab/og-image.png">
+    <meta property="og:locale" content="fa_IR">
+    <meta property="og:locale:alternate" content="en_US">
+    
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://tawanamohammadi.github.io/sefidyab/">
+    <meta name="twitter:title" content="سفید یاب | Sefid Yab">
+    <meta name="twitter:description" content="ابزار هوشمند شناسایی سیم‌کارت سفید در X">
+    <meta name="twitter:image" content="https://tawanamohammadi.github.io/sefidyab/og-image.png">
+    
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Sefid Yab | سفید یاب",
+        "description": "Smart White SIM Detector for X (Twitter)",
+        "url": "https://github.com/tawanamohammadi/sefidyab",
+        "applicationCategory": "SecurityApplication",
+        "operatingSystem": "Web Browser",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "author": {
+            "@type": "Person",
+            "name": "Tawana Mohammadi",
+            "url": "https://tawana.online",
+            "email": "info@tawana.online"
+        },
+        "license": "https://www.gnu.org/licenses/gpl-3.0.html",
+        "sameAs": [
+            "https://orcid.org/0009-0005-6825-6728",
+            "https://doi.org/10.6084/m9.figshare.30758297"
+        ]
+    }
+    </script>
+    
+    <!-- Styles -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #1d9bf0;
+            --warning: #ff6b00;
+            --success: #00ba7c;
+            --dark: #0f1419;
+            --light: #ffffff;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Vazirmatn", sans-serif;
+            background: linear-gradient(135deg, var(--dark) 0%, #1a1a2e 100%);
+            color: var(--light);
+            min-height: 100vh;
+            direction: rtl;
+        }
+        
+        . container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header */
+        header {
+            text-align: center;
+            padding: 60px 20px;
+        }
+        
+        . logo {
+            font-size: 64px;
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            font-size: 48px;
+            background: linear-gradient(135deg, var(--primary), var(--warning));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+        
+        .tagline {
+            font-size: 20px;
+            opacity: 0.8;
+            margin-bottom: 30px;
+        }
+        
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 16px 32px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            margin: 10px;
+            transition: all 0. 3s;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--warning));
+            color: white;
+        }
+        
+        . btn-secondary {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(29, 155, 240, 0.3);
+        }
+        
+        /* Features */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            padding: 60px 20px;
+        }
+        
+        .feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        
+        .feature-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        . feature-card h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        
+        . feature-card p {
+            opacity: 0.8;
+            line-height: 1. 6;
+        }
+        
+        /* Stats */
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            padding: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--warning);
+        }
+        
+        .stat-label {
+            font-size: 16px;
+            opacity: 0.7;
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 60px;
+        }
+        
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        . social-links {
+            margin: 20px 0;
+        }
+        
+        .social-links a {
+            margin: 0 10px;
+            font-size: 24px;
+        }
+        
+        /* Language Switcher */
+        .lang-switch {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="lang-switch" onclick="toggleLang()">🌐 EN / فا</div>
+    
+    <div class="container">
+        <header>
+            <div class="logo">🔍</div>
+            <h1>سفید یاب | Sefid Yab</h1>
+            <p class="tagline">شفافیت در فضای مجازی | Transparency in Cyberspace</p>
+            <div>
+                <a href="https://raw.githubusercontent.com/tawanamohammadi/sefidyab/main/sefidyab.user.js" class="btn btn-primary">
+                    📥 نصب رایگان
+                </a>
+                <a href="https://github.com/tawanamohammadi/sefidyab" class="btn btn-secondary">
+                    ⭐ GitHub
+                </a>
+            </div>
+        </header>
+        
+        <section class="features">
+            <div class="feature-card">
+                <div class="feature-icon">🔍</div>
+                <h3>اسکنر تایم‌لاین</h3>
+                <p>تحلیل خودکار کاربران در تایم‌لاین X و شناسایی حساب‌های مشکوک</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🛡️</div>
+                <h3>تشخیص ناهنجاری</h3>
+                <p>شناسایی سیم‌کارت‌های سفید و حساب‌های با هویت پنهان</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>داشبورد تحلیلی</h3>
+                <p>نمایش آمار و گزارش‌های جامع از کاربران اسکن شده</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💾</div>
+                <h3>خروجی داده</h3>
+                <p>امکان خروجی گرفتن به فرمت JSON و CSV</p>
+            </div>
+        </section>
+        
+        <section class="stats">
+            <div class="stat">
+                <div class="stat-number">v1.0</div>
+                <div class="stat-label">نسخه فعلی</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">GPL-3</div>
+                <div class="stat-label">متن‌باز</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">۲ زبان</div>
+                <div class="stat-label">فارسی + English</div>
+            </div>
+        </section>
+        
+        <footer>
+            <p>ساخته شده با ❤️ توسط <a href="https://tawana.online">Tawana Mohammadi</a></p>
+            <div class="social-links">
+                <a href="https://github.com/tawanamohammadi/sefidyab">📦 GitHub</a>
+                <a href="https://orcid.org/0009-0005-6825-6728">🆔 ORCID</a>
+                <a href="https://doi.org/10.6084/m9.figshare.30758297">📄 DOI</a>
+            </div>
+            <p style="margin-top: 20px; opacity: 0.6;">
+                © 2025 Sefid Yab | GPL-3.0 License
+            </p>
+        </footer>
+    </div>
+    
+    <script>
+        function toggleLang() {
+            const html = document.documentElement;
+            if (html.lang === 'fa') {
+                html.lang = 'en';
+                html.dir = 'ltr';
+            } else {
+                html.lang = 'fa';
+                html.dir = 'rtl';
+            }
+        }
+    </script>
+</body>
+</html>
